@@ -1,0 +1,103 @@
+/* CSS file for Sentinel 2 API client */
+/* Eddie Boyle 2023 */
+
+body { 
+    font-family: Calibri, Candara, Arial, sans-serif;
+    padding-top: 50px;
+    height: 100%; 
+}
+
+.error {color: #FF0000;}
+
+#footer {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+}
+
+#left-footer {
+    float: left;
+    padding-left: 10px;
+}
+
+#right-footer {
+    float: right;
+    padding-right: 10px;
+}    
+
+.fltlft {
+    float: left;
+    margin-right: 8px;
+    margin-left: 8px;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
+.brand {
+    height: 35px;
+    width: 180px;
+}
+
+.title {
+    padding: 10px;
+    float: left;
+    font-size: 1.5em;
+}
+
+/* Twitter Bootstrap customised CSS */
+.navbar-inverse 
+{
+    height: 50px;
+    color: #ffffff;
+    background-color: #007fff;
+    position: absolute;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+    background-color: #007fff;
+    font-size: 17px;
+    height: 50px;
+    line-height: 17px;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, 
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: #0066cc;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #0066cc;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #0066cc;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.navbar-inverse .navbar-collapse {
+  background-color: #007fff;
+  border-color: #007fff;
+  border-top: 0px;
+}
+
+.header {
+    float: left;
+}
