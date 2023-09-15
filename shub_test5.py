@@ -1,6 +1,7 @@
 import datetime
 import getpass
 import streamlit as st
+import matplotlib.pyplot as plt
 
 from sentinelhub import (
     SHConfig,
