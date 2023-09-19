@@ -71,18 +71,20 @@ request_true_color = SentinelHubRequest(
     config=config,
 )
 
-true_color_imgs = request_true_color.get_data()
+if config.sh_client_id && config.sh_client_secret:
+
+    true_color_imgs = request_true_color.get_data()
 
 #print(f"Returned data is of type = {type(true_color_imgs)} and length {len(true_color_imgs)}.")
 #print(f"Single element in the list is of type {type(true_color_imgs[-1])} and has shape {true_color_imgs[-1].shape}")
-st.write ('Returned data is of type = ', type(true_color_imgs))
-st.write (' and length = ', len(true_color_imgs))
-st.write (' Single element in the list is of type = ', type(true_color_imgs[-1]))
-st.write (' and has shape = ', true_color_imgs[-1].shape)
+#st.write ('Returned data is of type = ', type(true_color_imgs))
+#st.write (' and length = ', len(true_color_imgs))
+#st.write (' Single element in the list is of type = ', type(true_color_imgs[-1]))
+s##t.write (' and has shape = ', true_color_imgs[-1].shape)
 
-image = true_color_imgs[0]
+    image = true_color_imgs[0]
 
 #print(f"Image type: {image.dtype}")
-st.write ('Image Type: ', image.dtype)
+#st.write ('Image Type: ', image.dtype)
 
-plot_image(image, factor=3.5 / 255, clip_range=(0, 1))
+    plot_image(image, factor=3.5 / 255, clip_range=(0, 1))
