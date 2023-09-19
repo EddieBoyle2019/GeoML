@@ -1,5 +1,6 @@
 from typing import Any, Optional, Tuple
 
+import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -18,3 +19,5 @@ def plot_image(
         ax.imshow(image * factor, **kwargs)
     ax.set_xticks([])
     ax.set_yticks([])
+
+    st.pyplot(fig)
