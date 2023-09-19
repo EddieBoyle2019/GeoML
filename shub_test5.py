@@ -73,15 +73,13 @@ request_true_color = SentinelHubRequest(
 
 true_color_imgs = request_true_color.get_data()
 
-print(
-    f"Returned data is of type = {type(true_color_imgs)} and length {len(true_color_imgs)}."
-)
-print(
-    f"Single element in the list is of type {type(true_color_imgs[-1])} and has shape {true_color_imgs[-1].shape}"
-)
+#print(f"Returned data is of type = {type(true_color_imgs)} and length {len(true_color_imgs)}.")
+#print(f"Single element in the list is of type {type(true_color_imgs[-1])} and has shape {true_color_imgs[-1].shape}")
+st.write ('Returned data is of type = ', type(true_color_imgs))
+st.write (' and length = ' len(true_color_imgs))
 
 image = true_color_imgs[0]
 
-print(f"Image type: {image.dtype}")
+#print(f"Image type: {image.dtype}")
 
 plot_image(image, factor=3.5 / 255, clip_range=(0, 1))
