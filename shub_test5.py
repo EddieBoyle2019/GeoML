@@ -81,5 +81,6 @@ st.write (' and length = ', len(true_color_imgs))
 image = true_color_imgs[0]
 
 #print(f"Image type: {image.dtype}")
+st.write ('Image Type: ', image.dtype)
 
 plot_image(image, factor=3.5 / 255, clip_range=(0, 1))
