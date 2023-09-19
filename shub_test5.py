@@ -77,6 +77,8 @@ true_color_imgs = request_true_color.get_data()
 #print(f"Single element in the list is of type {type(true_color_imgs[-1])} and has shape {true_color_imgs[-1].shape}")
 st.write ('Returned data is of type = ', type(true_color_imgs))
 st.write (' and length = ', len(true_color_imgs))
+st.write (' Single element in the list is of type = ', type(true_color_imgs[-1])
+st.write (' and has shape = ', true_color_imgs[-1].shape)
 
 image = true_color_imgs[0]
 
