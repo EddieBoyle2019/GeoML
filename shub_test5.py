@@ -21,8 +21,10 @@ from utils import plot_image
 st.title('Sentinel Hub test')
 
 config = SHConfig()
-config.sh_client_id = st.text_input("Enter your SentinelHub client id", type="password")
-config.sh_client_secret = st.text_input("Enter your SentinelHub client secret", type="password")
+config.sh_client_id = "sh-7fb853f3-35ce-4bc5-b0b3-6448189bf065"
+config.sh_client_secret = "AN9b1KMl3r9xypCd8bJfBGrbtZvU9UEj"
+#config.sh_client_id = st.text_input("Enter your SentinelHub client id", type="password")
+#config.sh_client_secret = st.text_input("Enter your SentinelHub client secret", type="password")
 #config.sh_client_id = getpass.getpass("Enter your SentinelHub client id")
 #config.sh_client_secret = getpass.getpass("Enter your SentinelHub client secret")
 config.sh_token_url = "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token"
