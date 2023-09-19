@@ -71,7 +71,7 @@ request_true_color = SentinelHubRequest(
     config=config,
 )
 
-if config.sh_client_id && config.sh_client_secret:
+if config.sh_client_id and config.sh_client_secret:
 
     true_color_imgs = request_true_color.get_data()
 
