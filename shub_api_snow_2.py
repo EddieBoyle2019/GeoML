@@ -3,8 +3,8 @@
 # Requires sentinelhub Python package/virtual environment (https://sentinelhub-py.readthedocs.io/en/latest/)
 # Requires OAuth client credentials to be configured in CDSE dashboard (https://shapps.dataspace.copernicus.eu/dashboard/)
 # This code is adapted from https://sentinelhub-py.readthedocs.io/en/latest/examples/process_request.html
-# Eddie Boyle Sep 2023
 # Murray Cutforth Oct 2023
+# Eddie Boyle Dec 2023
 
 import getpass
 import streamlit as st

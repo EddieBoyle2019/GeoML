@@ -1,6 +1,6 @@
 # Utilities required for Sentinel Hub API
-# Eddie Boyle Sep 2023
 # Murray Cutforth Oct 2023
+# Eddie Boyle Dec 2023
 
 import json
 import math
