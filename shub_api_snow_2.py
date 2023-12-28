@@ -32,7 +32,7 @@ name_bbox_coords = read_bbox_geojson(all_patches_boxes)  # Mapping of name to [s
 name_point_coords = read_point_geojson(all_patches_points)  # Mapping of name to [lon, lat]
 
 # Structure page
-st.subheader("Scottish Snowpatches Serntinel-2 Data Tool")
+st.subheader("Scottish Snowpatches Sentinel-2 Data Tool")
 st.sidebar.write("The least cloudy image from the time interval below will be shown.")
 start_date = st.sidebar.date_input("Choose start date", value=datetime.now() - timedelta(days=30))
 end_date = st.sidebar.date_input("Choose end date", value=datetime.now())
