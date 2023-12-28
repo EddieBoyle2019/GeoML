@@ -32,12 +32,12 @@ name_bbox_coords = read_bbox_geojson(all_patches_boxes)  # Mapping of name to [s
 name_point_coords = read_point_geojson(all_patches_points)  # Mapping of name to [lon, lat]
 
 # Structure page
-st.title("Scottish Snowpatches Tool - Sentinel-2 data")
+st.subheader("Scottish Snowpatches Serntinel-2 Data Tool")
 st.sidebar.write("The least cloudy image from the time interval below will be shown.")
 start_date = st.sidebar.date_input("Choose start date", value=datetime.now() - timedelta(days=30))
 end_date = st.sidebar.date_input("Choose end date", value=datetime.now())
 sel = st.sidebar.selectbox("Choose a snow patch", [name.replace("_", " ") for name in name_bbox_coords])
-alpha = st.sidebar.slider('Set opacity of Sentinel-2 overlay', min_value=0.0, max_value=1.0, value=0.75, step=0.01)
+alpha = st.sidebar.slider('Set opacity of overlay images', min_value=0.0, max_value=1.0, value=0.75, step=0.01)
 
 # Retrieve and display images
 if config.sh_client_id and config.sh_client_secret:
