@@ -46,5 +46,5 @@ if config.sh_client_id and config.sh_client_secret:
     gcm_coords_wgs84 = get_coords_from_sel(sel_, name_bbox_coords)
     image_true = request_sentinel_image(gcm_coords_wgs84, config, start_date, end_date)
     image_scm = request_sentinel_scm(gcm_coords_wgs84, config, start_date, end_date)
-    image_true = np.clip(image * 3.5 / 255, 0, 1)
+    image_true = np.clip(image_true * 3.5 / 255, 0, 1)
     plot_map_with_image(image_true, image_scm, name_bbox_coords[sel_], name_point_coords[sel_], alpha=alpha, name=sel)
