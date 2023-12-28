@@ -238,7 +238,7 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
                     name = "s2a", service_url=config.sh_base_url
                 ),
                 time_interval=(start_date, end_date),
-                #mosaicking_order=MosaickingOrder.LEAST_CC,
+                mosaicking_order=MosaickingOrder.LEAST_CC,
             )
         ],
         responses=[SentinelHubRequest.output_response("default", MimeType.PNG)],
