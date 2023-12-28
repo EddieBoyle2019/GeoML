@@ -241,7 +241,7 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
                 #mosaicking_order=MosaickingOrder.LEAST_CC,
             )
         ],
-        responses=[SentinelHubRequest.output_response("default", MimeType.TIFF)],
+        responses=[SentinelHubRequest.output_response("default", MimeType.PNG)],
         bbox=gcm_bbox,
         size=gcm_size,
         config=config,
