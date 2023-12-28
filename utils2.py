@@ -13,7 +13,8 @@ from streamlit_folium import st_folium
 from typing import Any, Optional, Tuple
 
 def plot_map_with_image(
-        image: np.ndarray,
+        image_true: np.ndarray,
+        image_scm: np.ndarray,
         bbox: list[list, list],  # SW, NE points in [lon, lat] ordering
         centre: list,  # Centre point as [lon, lat] ordering
         alpha: float = 1.0,
@@ -43,8 +44,16 @@ def plot_map_with_image(
     m.fit_bounds([sw_point, ne_point])  # SW, NE corners in (lat, lon) form
 
     folium.raster_layers.ImageOverlay(
-        name="Sentinel-2 imagery",
-        image=image,
+        name="Sentinel-2 true colour (RGB) imagery",
+        image=image_true,
+        bounds=bbox,
+        opacity=alpha,
+        mercator_project=True,
+    ).add_to(m)
+
+    folium.raster_layers.ImageOverlay(
+        name="Sentinel-2 Scene Classification Map",
+        image=image_scm,
         bounds=bbox,
         opacity=alpha,
         mercator_project=True,

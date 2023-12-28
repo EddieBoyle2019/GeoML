@@ -44,7 +44,7 @@ alpha = st.sidebar.slider('Set opacity of Sentinel-2 overlay', min_value=0.0, ma
 if config.sh_client_id and config.sh_client_secret:
     sel_ = sel.replace(" ", "_")
     gcm_coords_wgs84 = get_coords_from_sel(sel_, name_bbox_coords)
-    #image = request_sentinel_image(gcm_coords_wgs84, config, start_date, end_date)
-    image = request_sentinel_scm(gcm_coords_wgs84, config, start_date, end_date)
-    #image = np.clip(image * 3.5 / 255, 0, 1)
-    plot_map_with_image(image, name_bbox_coords[sel_], name_point_coords[sel_], alpha=alpha, name=sel)
+    image_true = request_sentinel_image(gcm_coords_wgs84, config, start_date, end_date)
+    image_scm = request_sentinel_scm(gcm_coords_wgs84, config, start_date, end_date)
+    image_true = np.clip(image * 3.5 / 255, 0, 1)
+    plot_map_with_image(image_true, image_scm, name_bbox_coords[sel_], name_point_coords[sel_], alpha=alpha, name=sel)
