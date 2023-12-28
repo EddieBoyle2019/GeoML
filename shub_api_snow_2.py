@@ -32,7 +32,7 @@ name_bbox_coords = read_bbox_geojson(all_patches_boxes)  # Mapping of name to [s
 name_point_coords = read_point_geojson(all_patches_points)  # Mapping of name to [lon, lat]
 
 # Structure page
-st.title("Sentinel-2 RGB @ 10m resolution")
+st.title("Scottish Snowpatches Tool - Sentinel-2 data")
 st.sidebar.write("The least cloudy image from the time interval below will be shown.")
 start_date = st.sidebar.date_input("Choose start date", value=datetime.now() - timedelta(days=30))
 end_date = st.sidebar.date_input("Choose end date", value=datetime.now())
@@ -40,11 +40,13 @@ sel = st.sidebar.selectbox("Choose a snow patch", [name.replace("_", " ") for na
 alpha = st.sidebar.slider('Set opacity of Sentinel-2 overlay', min_value=0.0, max_value=1.0, value=0.75, step=0.01)
 # cloud_mask = st.sidebar.button("Show cloud mask (click me)")  # Currently not functional
 
-# Retrieve and display image
+# Retrieve and display images
 if config.sh_client_id and config.sh_client_secret:
     sel_ = sel.replace(" ", "_")
     gcm_coords_wgs84 = get_coords_from_sel(sel_, name_bbox_coords)
+    #True colour RGB
     image_true = request_sentinel_image(gcm_coords_wgs84, config, start_date, end_date)
-    image_scm = request_sentinel_scm(gcm_coords_wgs84, config, start_date, end_date)
     image_true = np.clip(image_true * 3.5 / 255, 0, 1)
+    #Scene Classification Map
+    image_scm = request_sentinel_scm(gcm_coords_wgs84, config, start_date, end_date)
     plot_map_with_image(image_true, image_scm, name_bbox_coords[sel_], name_point_coords[sel_], alpha=alpha, name=sel)

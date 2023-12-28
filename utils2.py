@@ -52,11 +52,12 @@ def plot_map_with_image(
     ).add_to(m)
 
     folium.raster_layers.ImageOverlay(
-        name="Sentinel-2 Scene Classification Map",
+        name="Sentinel-2 scene classification map",
         image=image_scm,
         bounds=bbox,
         opacity=alpha,
         mercator_project=True,
+        show=False,
     ).add_to(m)
 
     kw = {
