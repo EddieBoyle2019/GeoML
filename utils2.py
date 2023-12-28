@@ -176,3 +176,49 @@ def request_sentinel_image(gcm_coords_wgs84: tuple, config: SHConfig, start_date
     )
 
     return request_true_color.get_data()[0]
+
+
+@st.cache_data
+def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, end_date) -> np.ndarray:
+    #resolution = 10
+    gcm_bbox = BBox(bbox=gcm_coords_wgs84, crs=CRS.WGS84)
+    gcm_size = bbox_to_dimensions(gcm_bbox, resolution=resolution)
+
+    evalscript_scm = """
+        //VERSION=3
+        function setup() {
+            return {
+                input: [{
+                    bands: ["SCL"],
+                    units: "DN"
+                }],
+                output: {
+                    bands: 3,
+                    sampleType: "INT16"
+                }
+            };
+        }
+
+        function evaluatePixel(sample) {
+            return [sample.SCL];
+        }
+    """
+
+    request_scm = SentinelHubRequest(
+        evalscript=evalscript_scm,
+        input_data=[
+            SentinelHubRequest.input_data(
+                data_collection=DataCollection.SENTINEL2_L2A.define_from(
+                    name = "s2a", service_url=config.sh_base_url
+                ),
+                time_interval=(start_date, end_date),
+                #mosaicking_order=MosaickingOrder.LEAST_CC,
+            )
+        ],
+        responses=[SentinelHubRequest.output_response("default", MimeType.TIFF)],
+        bbox=gcm_bbox,
+        size=gcm_size,
+        config=config,
+    )
+
+    return request_scm.get_data()[0]
