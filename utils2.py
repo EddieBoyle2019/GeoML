@@ -282,9 +282,9 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
         evalscript=evalscript_scm,
         input_data=[
             SentinelHubRequest.input_data(
-                //data_collection=DataCollection.SENTINEL2_L2A.define_from(
-                //    name = "s2a", service_url=config.sh_base_url
-                //),
+                #data_collection=DataCollection.SENTINEL2_L2A.define_from(
+                #    name = "s2a", service_url=config.sh_base_url
+                #),
                 data_collection=DataCollection.SENTINEL2_L2A,
                 time_interval=(start_date, end_date),
                 mosaicking_order=MosaickingOrder.LEAST_CC,
