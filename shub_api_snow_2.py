@@ -22,8 +22,8 @@ st.set_page_config(layout="centered")
 
 # Credentials
 config = SHConfig()
-config.sh_client_id = st.text_input("Enter your SentinelHub client id", type="password")
-config.sh_client_secret = st.text_input("Enter your SentinelHub client secret", type="password")
+config.sh_client_id = st.sidebar.text_input("Enter your SentinelHub client id", type="password")
+config.sh_client_secret = st.sidebar.text_input("Enter your SentinelHub client secret", type="password")
 config.sh_token_url = "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token"
 config.sh_base_url = "https://sh.dataspace.copernicus.eu"
 
