@@ -124,50 +124,31 @@ def get_coords_from_sel(sel, name_bbox_coords) -> tuple[float, float, float, flo
 
 
 @st.cache_data
-def request_sentinel_image(gcm_coords_wgs84: tuple, config: SHConfig, start_date, end_date, cloud_mask: bool = False) -> np.ndarray:
+def request_sentinel_image(gcm_coords_wgs84: tuple, config: SHConfig, start_date, end_date) -> np.ndarray:
     resolution = 10
     gcm_bbox = BBox(bbox=gcm_coords_wgs84, crs=CRS.WGS84)
     gcm_size = bbox_to_dimensions(gcm_bbox, resolution=resolution)
 
-    if cloud_mask:
-        evalscript_true_color = """
+    # Evalscript to select the RGB (B04, B03, B02) Sentinel-2 L1C bands.
+    evalscript_true_color = """
         //VERSION=3
+        
         function setup() {
-          return {
-            input: ["B02", "B03", "B04", "CLM"],
-            output: { bands: 3 }
-          }
+            return {
+                input: [{
+                    bands: ["B02", "B03", "B04"]
+                }],
+                output: {
+                    bands: 3
+                }
+            };
         }
-
+        
         function evaluatePixel(sample) {
-          if (sample.CLM == 1) {
-            return [0.75 + sample.B04, sample.B03, sample.B02]
-          }
-          return [sample.B04, sample.B03, sample.B02];
+            return [sample.B04, sample.B03, sample.B02];
         }
-        """
-    else:
-        # Evalscript to select the RGB (B04, B03, B02) Sentinel-2 L1C bands.
-        evalscript_true_color = """
-            //VERSION=3
-        
-            function setup() {
-                return {
-                    input: [{
-                        bands: ["B02", "B03", "B04"]
-                    }],
-                    output: {
-                        bands: 3
-                    }
-                };
-            }
-        
-            function evaluatePixel(sample) {
-                return [sample.B04, sample.B03, sample.B02];
-            }
-        """
+    """
 
-    # PNG image from Jun 2020. Least cloud cover mosaicking used. Reflectance values in UINT8 format (values in 0-255 range).
     request_true_color = SentinelHubRequest(
         evalscript=evalscript_true_color,
         input_data=[
@@ -247,7 +228,6 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
                 data_collection=DataCollection.SENTINEL2_L2A.define_from(
                     name = "s2a", service_url=config.sh_base_url
                 ),
-                #data_collection=DataCollection.SENTINEL2_L2A,
                 time_interval=(start_date, end_date),
                 mosaicking_order=MosaickingOrder.LEAST_CC,
             )

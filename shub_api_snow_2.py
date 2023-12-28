@@ -38,7 +38,6 @@ start_date = st.sidebar.date_input("Choose start date", value=datetime.now() - t
 end_date = st.sidebar.date_input("Choose end date", value=datetime.now())
 sel = st.sidebar.selectbox("Choose a snow patch", [name.replace("_", " ") for name in name_bbox_coords])
 alpha = st.sidebar.slider('Set opacity of Sentinel-2 overlay', min_value=0.0, max_value=1.0, value=0.75, step=0.01)
-# cloud_mask = st.sidebar.button("Show cloud mask (click me)")  # Currently not functional
 
 # Retrieve and display images
 if config.sh_client_id and config.sh_client_secret:
