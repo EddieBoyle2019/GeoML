@@ -180,7 +180,7 @@ def request_sentinel_image(gcm_coords_wgs84: tuple, config: SHConfig, start_date
 
 @st.cache_data
 def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, end_date) -> np.ndarray:
-    #resolution = 10
+    resolution = 10
     gcm_bbox = BBox(bbox=gcm_coords_wgs84, crs=CRS.WGS84)
     gcm_size = bbox_to_dimensions(gcm_bbox, resolution=resolution)
 
