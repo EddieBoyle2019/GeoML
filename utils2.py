@@ -188,16 +188,16 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
         //VERSION=3
         function setup() {
             return {
-                input: ["SCL", "dataMask"],
-                output: { bands: 4 }
-                //input: [{
-                //        bands: ["SCL", "dataMask"],
-                //        units: "DN"
-                //    }],
-                //output: {
-                //    bands: 4,
-                //    sampleType: "UINT8"
-                //}
+                //input: ["SCL", "dataMask"],
+                //output: { bands: 4 }
+                input: [{
+                        bands: ["SCL", "dataMask"],
+                        units: "DN"
+                    }],
+                output: {
+                    bands: 4,
+                    sampleType: "UINT8"
+                }
             };
         }
 
