@@ -215,9 +215,17 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
          11: [255, 150, 255], // Snow or ice - very bright pink
         }
 
+        //function evaluatePixel(samples) {
+        //    let imgVals = classes[samples.SCL] || [0, 0, 0];
+        //    return imgVals.concat(samples.dataMask * 255);
+        //}
+
         function evaluatePixel(samples) {
-            let imgVals = classes[samples.SCL] || [0, 0, 0];
-            return imgVals.concat(samples.dataMask * 255);
+            // return black if key not available
+            let imgVals = classes[samples.SCL];
+            if (imgVals == undefined) imgVals = [0, 0, 0];
+            // scale to 0-1
+            return imgVals.map(x => x / 0xFF).concat(samples.dataMask);
         }
     """
 
