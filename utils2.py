@@ -52,7 +52,7 @@ def plot_map_with_image(
     ).add_to(m)
 
     folium.raster_layers.ImageOverlay(
-        name="Sentinel-2 scene classification map",
+        name="Sentinel-2 scene classification map (snow/ice)",
         image=image_scm,
         bounds=bbox,
         opacity=alpha,
@@ -175,6 +175,7 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
     gcm_bbox = BBox(bbox=gcm_coords_wgs84, crs=CRS.WGS84)
     gcm_size = bbox_to_dimensions(gcm_bbox, resolution=resolution)
 
+    # Evalscript to select the Scene Classification Map (SCL) Sentinel-2 L2A.
     evalscript_scm = """
         //VERSION=3
 
