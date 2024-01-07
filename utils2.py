@@ -185,7 +185,8 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
         function setup() {
             return {
                 input: ["SCL", "dataMask"],
-                output: { bands: 4 }
+                //output: { bands: 4 }
+                output: { bands: 3 }
             };
         }
 
