@@ -186,43 +186,44 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
             return {
                 input: ["SCL", "dataMask"],
                 output: { bands: 4 }
-                //output: { bands: 4, sampleType: "AUTO" }
-                //output: { bands: 4, sampleType: "UINT8" }
             };
         }
 
         function evaluatePixel(samples) {
             const SCL=samples.SCL;
             switch (SCL) {
+                //Make all types transparent except snow/ice 
                 // No Data (Missing data) (black)    
-                case 0: return RGBToColor (0, 0, 0, samples.dataMask);
+                //case 0: return RGBToColor (0, 0, 0, samples.dataMask);
                 // Saturated or defective pixel (red)   
-                case 1: return RGBToColor (255, 0, 0, samples.dataMask);
+                //case 1: return RGBToColor (255, 0, 0, samples.dataMask);
                 // Dark features / Shadows (very dark grey)
-                case 2: return RGBToColor (47,  47,  47, samples.dataMask);
+                //case 2: return RGBToColor (47,  47,  47, samples.dataMask);
                 // Cloud shadows (dark brown)
-                case 3: return RGBToColor (100, 50, 0, samples.dataMask);
+                //case 3: return RGBToColor (100, 50, 0, samples.dataMask);
                 // Vegetation (green)
                 //case 4: return RGBToColor (0, 160, 0, samples.dataMask);
-                case 4: return RGBToColor (0, 160, 0, 0);
+                //case 4: return RGBToColor (0, 160, 0, 0);
                 // Not-vegetated (dark yellow)
-                case 5: return RGBToColor (255, 230, 90, samples.dataMask);
+                //case 5: return RGBToColor (255, 230, 90, samples.dataMask);
                 // Water (dark and bright) (blue)
-                case 6: return RGBToColor (0, 0, 255, samples.dataMask);
+                //case 6: return RGBToColor (0, 0, 255, samples.dataMask);
                 // Unclassified (dark grey)
-                case 7: return RGBToColor (128, 128, 128, samples.dataMask);
+                //case 7: return RGBToColor (128, 128, 128, samples.dataMask);
                 // Cloud medium probability (grey)
-                case 8: return RGBToColor (192, 192, 192, samples.dataMask);
+                //case 8: return RGBToColor (192, 192, 192, samples.dataMask);
                 // Cloud high probability (white)
-                case 9: return RGBToColor (255, 255, 255, samples.dataMask);
+                //case 9: return RGBToColor (255, 255, 255, samples.dataMask);
                 // Thin cirrus (very bright blue)
-                case 10: return RGBToColor (100, 200, 255, samples.dataMask);
+                //case 10: return RGBToColor (100, 200, 255, samples.dataMask);
                 // Snow or ice (very bright pink)
-                case 11: return RGBToColor (255, 150, 255, samples.dataMask);
+                //case 11: return RGBToColor (255, 150, 255, samples.dataMask);
+                case 11: return RGBToColor (255, 150, 255, 1);
                 //case 11: return RGBToColor (255, 100, 255, samples.dataMask);
                 //case 11: return [1, 0, 1, samples.dataMask];
                 //case 11: return [255, 150, 255, samples.dataMask];
-                //default : return RGBToColor (0, 0, 0, samples.dataMask);  
+                //default : return RGBToColor (0, 0, 0, samples.dataMask); 
+                default : return RGBToColor (0, 0, 0, 0); 
             }
         }
     """
@@ -239,7 +240,6 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
             )
         ],
         responses=[SentinelHubRequest.output_response("default", MimeType.PNG)],
-        #responses=[SentinelHubRequest.output_response("default", MimeType.TIFF)],
         bbox=gcm_bbox,
         size=gcm_size,
         config=config,
