@@ -103,7 +103,7 @@ all_patches_boxes = {
         {
             "type": "Feature",
             "properties": {
-                "name": "Nevis_Gullys"
+                "name": "Aonach Beag"
             },
             "geometry": {
                 "type": "Polygon",
@@ -169,7 +169,7 @@ all_patches_boxes = {
         {
             "type": "Feature",
             "properties": {
-                "name": "Gael_Charn"
+                "name": "Geal_Charn"
             },
             "geometry": {
                 "type": "Polygon",
@@ -413,7 +413,7 @@ all_patches_points = {
         {
             "type": "Feature",
             "properties": {
-                "name": "Nevis_Gullys"
+                "name": "Aonach Beag"
             },
             "geometry": {
                 "type": "Point",
@@ -439,7 +439,7 @@ all_patches_points = {
         {
             "type": "Feature",
             "properties": {
-                "name": "Gael_Charn"
+                "name": "Geal_Charn"
             },
             "geometry": {
                 "type": "Point",
