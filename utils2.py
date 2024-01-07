@@ -217,7 +217,7 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
                 //case 10: return RGBToColor (100, 200, 255,samples.dataMask);
                 // Snow or ice (very bright pink)
                 //case 11: return RGBToColor (255, 150, 255,samples.dataMask);
-                case 11: return [1, 0.5, 1, samples.dataMask];
+                case 11: return [1, 0, 1, samples.dataMask];
                 //default : return RGBToColor (0, 0, 0, samples.dataMask);  
             }
         }
