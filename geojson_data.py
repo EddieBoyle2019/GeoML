@@ -103,7 +103,7 @@ all_patches_boxes = {
         {
             "type": "Feature",
             "properties": {
-                "name": "Aonach Beag"
+                "name": "Aonach_Beag"
             },
             "geometry": {
                 "type": "Polygon",
@@ -413,7 +413,7 @@ all_patches_points = {
         {
             "type": "Feature",
             "properties": {
-                "name": "Aonach Beag"
+                "name": "Aonach_Beag"
             },
             "geometry": {
                 "type": "Point",
