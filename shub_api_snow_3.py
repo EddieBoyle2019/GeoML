@@ -20,8 +20,6 @@ from geojson_data import all_patches_boxes, all_patches_points
 
 st.set_page_config(page_title="Scottish Snowpatches Tool", layout="centered")
 
-st.sidebar.page_link("pages/help.py", label="Help")
-
 # Credentials
 config = SHConfig()
 config.sh_client_id = st.sidebar.text_input("Enter your SentinelHub client id", type="password")
