@@ -42,7 +42,7 @@ def plot_map_with_image(
 
     sw_point = bbox[0]
     ne_point = bbox[1]
-    m.fit_bounds([sw_point, ne_point])  # SW, NE corners in (lat, lon) form
+    #m.fit_bounds([sw_point, ne_point])  # SW, NE corners in (lat, lon) form
 
     folium.raster_layers.ImageOverlay(
         name="Sentinel-2 true colour (RGB) imagery",
