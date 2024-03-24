@@ -28,7 +28,7 @@ def plot_map_with_image(
         tiles=tiles,
         attr=attr,
         zoom_control=True,
-        zoom_start=13,
+        zoom_start=14,
         control_scale=True,
     )
 
