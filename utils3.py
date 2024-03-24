@@ -276,7 +276,7 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
         config=config,
     )
 
-    return request_scm.get_data()[0]
- 
     #st.sidebar.write(request_scm_stats.get_data()[0])
-    st.write('test1', request_scm_stats.get_data()[0])
+    st.sidebar.write("test1: ", request_scm_stats.get_data()[0])
+
+    return request_scm.get_data()[0]
