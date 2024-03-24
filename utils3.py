@@ -8,7 +8,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import folium
-from sentinelhub import SHConfig, BBox, CRS, bbox_to_dimensions, SentinelHubRequest, DataCollection, MosaickingOrder, MimeType
+from sentinelhub import SHConfig, BBox, CRS, bbox_to_dimensions, SentinelHubRequest, DataCollection, MosaickingOrder, MimeType, SentinelHubStatistical
 from streamlit_folium import st_folium
 from typing import Any, Optional, Tuple
 
