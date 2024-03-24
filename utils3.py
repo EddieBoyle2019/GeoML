@@ -33,7 +33,7 @@ def plot_map_with_image(
 
     folium.Marker(
         location=centre[::-1],
-        tooltip=f"{name} snow patch; Lat/Long: {centre}",
+        tooltip=f"{name} snow patch; Lat/Long: {location}",
         icon=folium.Icon(),
     ).add_to(m)
 
