@@ -15,7 +15,7 @@ from sentinelhub import (
     SHConfig,
 )
 
-from utils2 import read_bbox_geojson, read_point_geojson, plot_map_with_image, get_coords_from_sel, request_sentinel_image, request_sentinel_scm
+from utils3 import read_bbox_geojson, read_point_geojson, plot_map_with_image, get_coords_from_sel, request_sentinel_image, request_sentinel_scm
 from geojson_data import all_patches_boxes, all_patches_points
 
 st.set_page_config(layout="centered")
