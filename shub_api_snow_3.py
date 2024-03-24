@@ -20,6 +20,8 @@ from geojson_data import all_patches_boxes, all_patches_points
 
 st.set_page_config(layout="centered")
 
+st.sidebar.page_link("help.py", label="Help")
+
 # Credentials
 config = SHConfig()
 config.sh_client_id = st.sidebar.text_input("Enter your SentinelHub client id", type="password")
