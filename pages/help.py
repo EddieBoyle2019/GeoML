@@ -1,15 +1,10 @@
 import streamlit as st
 
-st.markdown("*Streamlit* is **really** ***cool***.")
-st.markdown('''
-    :red[Streamlit] :orange[can] :green[write] :blue[text] :violet[in]
-    :gray[pretty] :rainbow[colors].''')
-st.markdown("Here's a bouquet &mdash;\
-            :tulip::cherry_blossom::rose::hibiscus::sunflower::blossom:")
+multi = '''**What does this tool do?**
 
-multi = '''If you end a line with two spaces,
-a soft return is used for the next line.
+This tool is for exploring the appearance and location of well-known long-lasting snowpatches in the Scottosh Highlands
 
-Two (or more) newline characters in a row will result in a hard return.
+To use it,
 '''
+
 st.markdown(multi)
