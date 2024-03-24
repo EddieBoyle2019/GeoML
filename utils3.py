@@ -254,4 +254,22 @@ def request_sentinel_scm(gcm_coords_wgs84: tuple, config: SHConfig, start_date, 
         config=config,
     )
 
+    request_scm_stats = SentinelHubStatistical(
+        evalscript=evalscript_scm,
+        input_data=[
+            SentinelHubStatistical.input_data(
+                data_collection=DataCollection.SENTINEL2_L2A.define_from(
+                    name = "s2a", service_url=config.sh_base_url
+                ),
+                time_interval=(start_date, end_date),
+                mosaicking_order=MosaickingOrder.LEAST_CC,
+            )
+        ],
+        bbox=gcm_bbox,
+        size=gcm_size,
+        config=config,
+    )
+
     return request_scm.get_data()[0]
+ 
+    print request_scm_stats.get_data()[0]
