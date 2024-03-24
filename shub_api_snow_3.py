@@ -20,7 +20,7 @@ from geojson_data import all_patches_boxes, all_patches_points
 
 st.set_page_config(layout="centered")
 
-st.sidebar.page_link("help.py", label="Help")
+st.sidebar.page_link("pages/help.py", label="Help")
 
 # Credentials
 config = SHConfig()
