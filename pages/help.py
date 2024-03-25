@@ -16,21 +16,21 @@ To use this tool, you first need to set up access, go to Appendix A at the botto
 
 Once done, enter the special authentication details at 'SentinelHub client id' and 'SentinelHub client secret' fields in the menu bar to the left of the tool.
 
-**Controls**
+**How do I control the tool?**
 
-Date
+1. Date  
 Change the date period used by using the 'Choose start date' and 'Choose end date' fields in the lefthand menu - good ones to try to see a good image are May 1 2023 - May 31 2023. 
 
-Location
+2. Location  
 Select different areas to investigate using the 'Choose a snowpatch' field. 
 
-Transparency 
+3. Transparency     
 Alter the transparency of the satellite image using the 'Set opacity of overlay images' slider.
 
-Map data
-Zoom in and out of the map using the icons at the top left of the map. Control the data displayed on the map using the icons at the top right of the map. You can control the display of two types of satellite data, 'Sentinel-2 true colour (RGB) imagery' and 'Sentinel-2 scene classification map (snow/ice)'. Technical information about this data is contained at Appendix B.
+4. Map data  
+Zoom in and out of the map using the icons at the top left of the map. Control the data displayed on the map using the icon at the top right of the map. You can control the display of two types of satellite data, 'Sentinel-2 true colour (RGB) imagery' and 'Sentinel-2 scene classification map (snow/ice)'. Technical information about this data is contained at Appendix B.
 
-Snowpatch information
+5. Snowpatch information
 Hover with a mouse on the blue marker in the centre of the map to see the name and coordinates of the selected snowpatch. 
 
 **Appendix A**
@@ -48,19 +48,19 @@ https://documentation.dataspace.copernicus.eu/APIs/SentinelHub/Overview/Authenti
 
 **Appendix B**
 
-CDSE satellite data
+CDSE satellite data:
 
 1. Sentinel-2 true colour (RGB) imagery 
 
 This uses data from the Sentinel 2 satellite to create a 'true colour' image corresponding what a human eye might see. An important thing to note is that this data is not a 'snapshot' taken on one particular day, rather it is a combination of data from the whole date range selected, using data from the least cloudy days, to generate the 'best' image of the area available. A narrow date range will enable a particular single date to be identified, but this increases the chance that there will be no data available due to 1) the satellite orbit was not over the area selected 2) the satellite was over the area at nightime 3) there was significant cloud cover during the date range selected.
 
-Cloud cover is probably the single most important factor affecting satellate imagery of the Scottish Highlands and it can be difficult to find an image that shows snowpatches, particularly during the winter months. There can be only 1 day a month, or even none, when suitable imagery is available. Some work is underway to try and improve this using Machine Learning so that even imagery with clouds can be used.    
+Cloud cover is probably the single most important factor affecting satellite imagery of the Scottish Highlands and it can be difficult to find an image that shows snowpatches, particularly during the winter months. There can be only 1 day a month, or even none, when suitable imagery is available. Some work is underway to try and improve this using Machine Learning so that even imagery with clouds can be used.    
 
 To get more control over accessing this satellite imagery, it is recommended to use the Copernicus Browser at: https://browser.dataspace.copernicus.eu.
 
 2. Sentinel-2 scene classification map (snow/ice)
 
-The Copernicus system uses a fairly sophisticated algorithm (details at: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/algorithm-overview) that automatically identifies areas of snow and ice in the satellite imagery, and this can be used to identify snowpatches in the Scottish Highlands, which appear in the data on the map as purple areas when this option is selected. This algorithm is not perfect, and can miss some snowpatches smaller that 10m2. The work underway to use Machine Learning strategies may improve upon this algorithm.
+The Copernicus system uses a fairly sophisticated algorithm (details at: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/algorithm-overview) that automatically identifies areas of snow and ice in the satellite imagery, and this can be used to identify snowpatches in the Scottish Highlands, which appear in the data on the map as purple areas when this option is selected. This algorithm is not perfect, and can miss some snowpatches smaller than 10m<sup>2</sup>. The work underway to use Machine Learning strategies may improve upon this algorithm.
 
 '''
 
