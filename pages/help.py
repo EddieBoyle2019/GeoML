@@ -60,7 +60,7 @@ To get more control over accessing this satellite imagery, it is recommended to 
 
 2. Sentinel-2 scene classification map (snow/ice)
 
-The Copernicus system uses a fairly sophisticated algorithm (details at: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/algorithm-overview) that automatically identifies areas of snow and ice in the satellite imagery, and this can be used to identify snowpatches in the Scottish Highlands, which appear in the data on the map as purple areas when this option is selected. This algorithm is not perfect, and can miss some snowpatches smaller than 10m&sup2;. The work underway to use Machine Learning strategies may improve upon this algorithm.
+The Copernicus system uses a fairly sophisticated algorithm (details at: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/algorithm-overview) that automatically identifies areas of snow and ice in the satellite imagery, and this can be used to identify snowpatches in the Scottish Highlands, which appear in the data on the map as purple areas when this option is selected. This algorithm is not perfect, and can miss some snowpatches around 100m&sup2; (10m by 10m) in size. The work underway to use Machine Learning strategies may improve upon this algorithm.
 
 '''
 
