@@ -30,7 +30,7 @@ Alter the transparency of the satellite image using the 'Set opacity of overlay 
 4. Map data  
 Zoom in and out of the map using the icons at the top left of the map. Control the data displayed on the map using the icon at the top right of the map. You can control the display of two types of satellite data, 'Sentinel-2 true colour (RGB) imagery' and 'Sentinel-2 scene classification map (snow/ice)'. Technical information about this data is contained at Appendix B.
 
-5. Snowpatch information
+5. Snowpatch information  
 Hover with a mouse on the blue marker in the centre of the map to see the name and coordinates of the selected snowpatch. 
 
 **Appendix A**
@@ -60,7 +60,7 @@ To get more control over accessing this satellite imagery, it is recommended to 
 
 2. Sentinel-2 scene classification map (snow/ice)
 
-The Copernicus system uses a fairly sophisticated algorithm (details at: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/algorithm-overview) that automatically identifies areas of snow and ice in the satellite imagery, and this can be used to identify snowpatches in the Scottish Highlands, which appear in the data on the map as purple areas when this option is selected. This algorithm is not perfect, and can miss some snowpatches smaller than 10m<sup>2</sup>. The work underway to use Machine Learning strategies may improve upon this algorithm.
+The Copernicus system uses a fairly sophisticated algorithm (details at: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/algorithm-overview) that automatically identifies areas of snow and ice in the satellite imagery, and this can be used to identify snowpatches in the Scottish Highlands, which appear in the data on the map as purple areas when this option is selected. This algorithm is not perfect, and can miss some snowpatches smaller than 10m&sup2;. The work underway to use Machine Learning strategies may improve upon this algorithm.
 
 '''
 
