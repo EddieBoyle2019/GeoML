@@ -1,6 +1,6 @@
 Code for retrieving and analysing Scottish snowpatches with Sentinel data
 
-Uses the Streamlit platform for public usage as web app - URL: https://gnmkt4fm3cv4tzxtbx54bg.streamlit.app
+Uses the Streamlit platform for public usage as web app - URL: https://scottish-snowpatches.streamlit.app
 
 Requires sentinelhub Python package/virtual environment (https://sentinelhub-py.readthedocs.io/en/latest/)
 
